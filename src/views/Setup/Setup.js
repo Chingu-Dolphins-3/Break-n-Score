@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 import Button from './../../components/Buttons/Button';
 import TextBox from './../../components/TextBox/TextBox';
 
-import './../../components/TextBox/TextBox.css';
+import './Setup.css';
 
 class Setup extends Component {
   render() {

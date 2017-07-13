@@ -1,12 +1,3 @@
-.setup {
-  display: flex;
-  flex-direction: column;
-}
-.player1,
-.player2 {
-  display: flex;
-  flex-direction: row;
-}
 .p1Name,
 .p2Name {
   flex: 2 2 0;
