@@ -81,13 +81,13 @@ export class OrmConfig {
       synchronize: true,
       logging: false,
       entities: [
-        'server/src/entity/**/*.ts',
+        'server/src/entity/*.ts',
       ],
       migrations: [
-        'server/src/migration/**/*.ts',
+        'server/src/migration/*.ts',
       ],
       subscribers: [
-        'server/src/subscriber/**/*.ts',
+        'server/src/subscriber/*.ts',
       ],
       cli: {
         entitiesDir: 'server/src/entity',
