@@ -15,7 +15,7 @@ async function bootstrap() {
   await createConnection(configSettings)
     .then(connection => {
       // TODO: determine if anything needs to be done with the db at this point
-      console.log('connected to 9ball_scoring_app');
+      console.log('connected to break_n_score');
     })
     .catch(error => {
       console.log(error);

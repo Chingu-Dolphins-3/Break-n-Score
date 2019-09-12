@@ -77,7 +77,7 @@ export class OrmConfig {
       port: 5432,
       username: dbVariables.POSTGRES_USER,
       password: dbVariables.POSTGRES_PASS,
-      database: '9ball_scoring_app',
+      database: 'break_n_score',
       synchronize: true,
       logging: false,
       entities: [
