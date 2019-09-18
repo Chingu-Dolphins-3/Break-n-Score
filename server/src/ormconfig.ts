@@ -27,7 +27,7 @@ export interface OrmConfiguration extends BaseConnectionOptions {
     entitiesDir: string;
     migrationsDir: string;
     subscribersDir: string;
-  }
+  };
 }
 
 export class OrmConfig {
@@ -51,7 +51,7 @@ export class OrmConfig {
       POSTGRES_PASS: '',
     };
 
-    for (let key in defaultEnvVars) {
+    for (const key in defaultEnvVars) {
       if (envArgs.hasOwnProperty(key)) {
         defaultEnvVars[key] = envArgs[key];
       }
@@ -61,6 +61,13 @@ export class OrmConfig {
   }
 
   public static setConfig(): OrmConfiguration {
+    // TODO: install and use `dotenv-webpack` once CRA ejected to fix `server:start:prod` script
+    const typeOrmDir = process.env.NODE_ENV === 'production'
+      ? 'server/dist'
+      : 'server/src';
+    const fileExt = process.env.NODE_ENV === 'production'
+      ? 'js'
+      : 'ts';
     const dotEnvFilePath = Path.resolve(__dirname, '../../.env');
     let dotEnv: Buffer | string = '';
 
@@ -68,7 +75,7 @@ export class OrmConfig {
       dotEnv = Fs.readFileSync(dotEnvFilePath, { encoding: 'utf8' });
     }
 
-    const envVariables: DotenvParseOutput = parse(dotEnv, { debug: true });
+    const envVariables: DotenvParseOutput = parse(dotEnv);
     const dbVariables: EnvObject = OrmConfig.getDesiredEnvVars(envVariables);
 
     return {
@@ -81,18 +88,18 @@ export class OrmConfig {
       synchronize: true,
       logging: false,
       entities: [
-        'server/src/entity/*.ts',
+        `${typeOrmDir}/entity/*.${fileExt}`,
       ],
       migrations: [
-        'server/src/migration/*.ts',
+        `${typeOrmDir}/migration/*.${fileExt}`,
       ],
       subscribers: [
-        'server/src/subscriber/*.ts',
+        `${typeOrmDir}/subscriber/*.${fileExt}`,
       ],
       cli: {
-        entitiesDir: 'server/src/entity',
-        migrationsDir: 'server/src/migration',
-        subscribersDir: 'server/src/subscriber',
+        entitiesDir: `${typeOrmDir}/entity`,
+        migrationsDir: `${typeOrmDir}/migration`,
+        subscribersDir: `${typeOrmDir}/subscriber`,
       },
     };
   }
