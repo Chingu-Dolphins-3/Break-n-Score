@@ -48,7 +48,9 @@
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-react": "^7.14.3",
     "eslint-plugin-react-hooks": "^1.7.0",
+    "husky": ">=1",
     "jest": "24.7.1",
+    "lint-staged": ">=8",
     "prettier": "1.17.0",
     "react-scripts-ts": "3.1.0",
     "react-test-renderer": "^16.6.0",
@@ -79,7 +81,7 @@
     "client:start": "react-scripts-ts start",
     "client:test": "react-scripts-ts test --env=jsdom",
     "eject": "react-scripts-ts eject",
-    "format": "prettier --write \"server/src/**/*.ts\"",
+    "format": "prettier --write \"{src,server/src}/**/*.{ts,tsx}\"",
     "lint": "tslint -p tsconfig.json -c tslint.json",
     "server:build": "rimraf ./server/dist tsconfig.build.tsbuildinfo && tsc -p tsconfig.build.json --outDir server/dist",
     "server:start": "ts-node -r tsconfig-paths/register server/src/main.ts",
@@ -92,5 +94,20 @@
     "server:test:e2e": "jest --config ./server/test/jest-e2e.json",
     "server:test:watch": "jest --watch"
   },
-  "proxy": "http://localhost:5000"
+  "proxy": "http://localhost:5000",
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{ts,tsx}": [
+      "prettier --write",
+      "git add"
+    ],
+    "*.js": [
+      "eslint --fix",
+      "git add"
+    ]
+  }
 }

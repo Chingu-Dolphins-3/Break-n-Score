@@ -1,7 +1,4 @@
-import {
-  DotenvParseOutput,
-  parse,
-} from 'dotenv';
+import { DotenvParseOutput, parse } from 'dotenv';
 import * as Fs from 'fs';
 import * as Path from 'path';
 import { BaseConnectionOptions } from 'typeorm/connection/BaseConnectionOptions';
@@ -62,12 +59,8 @@ export class OrmConfig {
 
   public static setConfig(): OrmConfiguration {
     // TODO: install and use `dotenv-webpack` once CRA ejected to fix `server:start:prod` script
-    const typeOrmDir = process.env.NODE_ENV === 'production'
-      ? 'server/dist'
-      : 'server/src';
-    const fileExt = process.env.NODE_ENV === 'production'
-      ? 'js'
-      : 'ts';
+    const typeOrmDir = process.env.NODE_ENV === 'production' ? 'server/dist' : 'server/src';
+    const fileExt = process.env.NODE_ENV === 'production' ? 'js' : 'ts';
     const dotEnvFilePath = Path.resolve(__dirname, '../../.env');
     let dotEnv: Buffer | string = '';
 
@@ -87,15 +80,9 @@ export class OrmConfig {
       database: 'break_n_score',
       synchronize: true,
       logging: false,
-      entities: [
-        `${typeOrmDir}/entity/*.${fileExt}`,
-      ],
-      migrations: [
-        `${typeOrmDir}/migration/*.${fileExt}`,
-      ],
-      subscribers: [
-        `${typeOrmDir}/subscriber/*.${fileExt}`,
-      ],
+      entities: [`${typeOrmDir}/entity/*.${fileExt}`],
+      migrations: [`${typeOrmDir}/migration/*.${fileExt}`],
+      subscribers: [`${typeOrmDir}/subscriber/*.${fileExt}`],
       cli: {
         entitiesDir: `${typeOrmDir}/entity`,
         migrationsDir: `${typeOrmDir}/migration`,
