@@ -1,3 +1,4 @@
+// tslint:disable:no-console
 import { createConnection } from 'typeorm';
 import { NestFactory } from '@nestjs/core';
 import 'reflect-metadata';

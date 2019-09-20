@@ -71,7 +71,6 @@ class App extends React.Component<Props, State> {
   }
 
   private handleRoute(route: string): void {
-    console.log(route);
     this.setState({
       currentRoute: route,
     });
