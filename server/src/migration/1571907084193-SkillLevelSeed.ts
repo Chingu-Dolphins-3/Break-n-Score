@@ -11,8 +11,11 @@ export class SkillLevelSeed1571907084193 implements MigrationInterface {
 
     try {
       const skillLevels = await getRepository('SkillLevel').save(SkillLevelSeed);
+
       if (skillLevels) {
-        this.logger.log('SkillLevel seed completely successfully');
+        this.logger.log(
+          `SkillLevel seed completed successfully, ${skillLevels.length} rows added.`,
+        );
       }
     } catch (error) {
       this.logger.error('SkillLevel seed failed', error.stack);
@@ -20,6 +23,19 @@ export class SkillLevelSeed1571907084193 implements MigrationInterface {
   }
 
   public async down(queryRunner: QueryRunner): Promise<any> {
-    // insert SQL statement to revert the changes made by `up` method.
+    this.logger.log('Starting SkillLevel seed reversion...');
+
+    try {
+      const skillLevels = await queryRunner.query(`DELETE FROM "skill_level"`);
+      const rowCount = skillLevels[1];
+
+      if (skillLevels) {
+        this.logger.log(
+          `SkillLevel seed reversion completed successfully, ${rowCount} rows removed.`,
+        );
+      }
+    } catch (error) {
+      this.logger.error('SkillLevel seed reversion failed', error.stack);
+    }
   }
 }
