@@ -13,8 +13,8 @@ import {
   UsePipes,
   ValidationPipe,
 } from '@nestjs/common';
-import { AuthGuard } from '@nestjs/passport';
 
+import { CookieAuthenticationGuard } from '../auth/cookie-authentication.guard';
 import { GetUser } from '../auth/get-user.decorator';
 import { GameService } from './game.service';
 
@@ -25,7 +25,7 @@ import type { UpdateGameDto } from './dto/update-game.dto';
 import type { Game } from './game.entity';
 
 @Controller('api/game')
-@UseGuards(AuthGuard())
+@UseGuards(CookieAuthenticationGuard)
 export class GameController {
   constructor(private gameService: GameService) {}
 
