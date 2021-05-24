@@ -6,12 +6,15 @@ import 'reflect-metadata';
 import { AppModule } from './app.module';
 import { AppConfigService } from './config/app/config.service';
 
+const cookieParser = require('cookie-parser');
+
 const configService = new ConfigService();
 const appConfigService = new AppConfigService(configService);
 
 async function bootstrap(): Promise<void> {
   const logger = new Logger('bootstrap');
   const app = await NestFactory.create(AppModule);
+  app.use(cookieParser());
 
   if (process.env.NODE_ENV === 'development') {
     app.enableCors();
