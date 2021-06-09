@@ -1,6 +1,16 @@
-import { Body, Controller, HttpCode, Post, Req, Res, ValidationPipe } from '@nestjs/common';
+import {
+  Body,
+  Controller,
+  HttpCode,
+  Post,
+  Req,
+  Res,
+  UseGuards,
+  ValidationPipe,
+} from '@nestjs/common';
 
 import { AuthService } from './auth.service';
+import { CookieAuthenticationGuard } from './cookie-authentication.guard';
 
 import type { Request, Response } from 'express';
 
@@ -24,6 +34,15 @@ export class AuthController {
     response.setHeader('Set-Cookie', cookie);
 
     return response.send(user);
+  }
+
+  @Post('/signout')
+  @UseGuards(CookieAuthenticationGuard)
+  public async signOut(@Req() request: Request, @Res() response: Response): Promise<Response> {
+    const cookie = this.authService.getCookieForSignOut();
+    response.setHeader('Set-Cookie', cookie);
+
+    return response.sendStatus(200);
   }
 
   @Post('/signup')
