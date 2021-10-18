@@ -1,14 +1,17 @@
 import { Logger } from '@nestjs/common';
+import { ConfigService } from '@nestjs/config';
 import { NestFactory } from '@nestjs/core';
 import 'reflect-metadata';
 
 import { AppModule } from './app.module';
 import { AppConfigService } from './config/app/config.service';
 
+const configService = new ConfigService();
+const appConfigService = new AppConfigService(configService);
+
 async function bootstrap(): Promise<void> {
   const logger = new Logger('bootstrap');
   const app = await NestFactory.create(AppModule);
-  const appConfig: AppConfigService = app.get('AppConfigService');
 
   if (process.env.NODE_ENV === 'development') {
     app.enableCors();
@@ -19,8 +22,8 @@ async function bootstrap(): Promise<void> {
     // logger.log(`Accepting requests from origin "${appConfig.serverOrigin}"`);
   }
 
-  await app.listen(appConfig.serverPort);
-  logger.log(`Application listening on port ${appConfig.serverPort}`);
+  await app.listen(appConfigService.serverPort);
+  logger.log(`Application listening on port ${appConfigService.serverPort}`);
 }
 
 bootstrap();
