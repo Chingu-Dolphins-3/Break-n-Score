@@ -2,11 +2,12 @@ import { Injectable, NotFoundException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import * as _ from 'lodash';
 
-import { HostLocation } from './host-location.entity';
 import { HostLocationRepository } from './host-location.repository';
-import { CreateHostLocationDto } from './dto/create-host-location.dto';
-import { GetHostLocationsFilterDto } from './dto/get-host-locations-filter.dto';
-import { UpdateHostLocationDto } from './dto/update-host-location.dto';
+
+import type { HostLocation } from './host-location.entity';
+import type { CreateHostLocationDto } from './dto/create-host-location.dto';
+import type { GetHostLocationsFilterDto } from './dto/get-host-locations-filter.dto';
+import type { UpdateHostLocationDto } from './dto/update-host-location.dto';
 
 @Injectable()
 export class HostLocationService {

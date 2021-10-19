@@ -6,11 +6,12 @@ import {
 } from '@nestjs/common';
 import { EntityRepository, Repository } from 'typeorm';
 
-import { User } from '../auth/user.entity';
 import { duplicateEntryErrorCode } from '../auth/user.repository';
-import { CreatePlayerGameDto } from './dto/create-player-game.dto';
-import { GetPlayerGamesFilterDto } from './dto/get-player-games-filter.dto';
 import { PlayerGame } from './player-game.entity';
+
+import type { User } from '../auth/user.entity';
+import type { CreatePlayerGameDto } from './dto/create-player-game.dto';
+import type { GetPlayerGamesFilterDto } from './dto/get-player-games-filter.dto';
 
 @EntityRepository(PlayerGame)
 export class PlayerGameRepository extends Repository<PlayerGame> {

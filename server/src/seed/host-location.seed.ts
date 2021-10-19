@@ -1,4 +1,4 @@
-import { HostLocation } from '../host-location/host-location.entity';
+import type { HostLocation } from '../host-location/host-location.entity';
 
 export const HostLocationSeed: Array<Partial<HostLocation>> = [
   {

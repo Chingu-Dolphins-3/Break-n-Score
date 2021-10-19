@@ -1,7 +1,9 @@
 import { Logger } from '@nestjs/common';
-import { getRepository, MigrationInterface, QueryRunner } from 'typeorm';
+import { getRepository } from 'typeorm';
 
 import { SessionSeed } from '../seed/session.seed';
+
+import type { MigrationInterface, QueryRunner } from 'typeorm';
 
 export class SessionSeed1571907084196 implements MigrationInterface {
   private logger = new Logger('SessionSeed');

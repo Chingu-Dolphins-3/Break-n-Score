@@ -1,8 +1,10 @@
 import * as dateFns from 'date-fns';
-import { StrictOmit } from 'ts-essentials';
 
-import { Game } from '../game/game.entity';
 import { startingSunday, startingTuesday } from './match.seed';
+
+import type { StrictOmit } from 'ts-essentials';
+
+import type { Game } from '../game/game.entity';
 
 export type GameSeedEntity = StrictOmit<Game, 'match'> & {
   match: number;

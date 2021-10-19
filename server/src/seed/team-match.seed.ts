@@ -1,6 +1,6 @@
-import { StrictOmit } from 'ts-essentials';
+import type { StrictOmit } from 'ts-essentials';
 
-import { TeamMatch } from '../team-match/team-match.entity';
+import type { TeamMatch } from '../team-match/team-match.entity';
 
 export type TeamMatchSeedEntity = StrictOmit<TeamMatch, 'match' | 'team'> & {
   match: number;

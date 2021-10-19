@@ -1,7 +1,9 @@
 import { Logger } from '@nestjs/common';
-import { getRepository, MigrationInterface, QueryRunner } from 'typeorm';
+import { getRepository } from 'typeorm';
 
 import { HostLocationSeed } from '../seed/host-location.seed';
+
+import type { MigrationInterface, QueryRunner } from 'typeorm';
 
 export class HostLocationSeed1571907084195 implements MigrationInterface {
   private logger = new Logger('HostLocationSeed');

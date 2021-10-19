@@ -8,8 +8,9 @@ import { EntityRepository, Repository } from 'typeorm';
 
 import { duplicateEntryErrorCode } from '../auth/user.repository';
 import { Division } from './division.entity';
-import { CreateDivisionDto } from './dto/create-division.dto';
-import { GetDivisionsFilterDto } from './dto/get-divisions-filter.dto';
+
+import type { CreateDivisionDto } from './dto/create-division.dto';
+import type { GetDivisionsFilterDto } from './dto/get-divisions-filter.dto';
 
 @EntityRepository(Division)
 export class DivisionRepository extends Repository<Division> {

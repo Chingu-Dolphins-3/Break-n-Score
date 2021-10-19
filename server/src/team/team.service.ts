@@ -2,14 +2,15 @@ import { Injectable, NotFoundException, UnprocessableEntityException } from '@ne
 import { InjectRepository } from '@nestjs/typeorm';
 import * as _ from 'lodash';
 
-import { User } from '../auth/user.entity';
 import { DivisionRepository } from '../division/division.repository';
 import { HostLocationRepository } from '../host-location/host-location.repository';
-import { CreateTeamDto } from './dto/create-team.dto';
-import { GetTeamsFilterDto } from './dto/get-teams-filter.dto';
-import { UpdateTeamDto } from './dto/update-team.dto';
-import { Team } from './team.entity';
 import { TeamRepository } from './team.repository';
+
+import type { User } from '../auth/user.entity';
+import type { CreateTeamDto } from './dto/create-team.dto';
+import type { GetTeamsFilterDto } from './dto/get-teams-filter.dto';
+import type { UpdateTeamDto } from './dto/update-team.dto';
+import type { Team } from './team.entity';
 
 @Injectable()
 export class TeamService {

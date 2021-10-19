@@ -1,6 +1,6 @@
 import { IsBoolean, IsInt, IsMilitaryTime, IsOptional } from 'class-validator';
 
-import { Match } from '../../match/match.entity';
+import type { Match } from '../../match/match.entity';
 
 export class UpdateGameDto {
   @IsInt()

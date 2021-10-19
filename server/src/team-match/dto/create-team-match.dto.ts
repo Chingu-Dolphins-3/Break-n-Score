@@ -1,7 +1,7 @@
 import { IsBoolean, IsInt, IsNotEmpty } from 'class-validator';
 
-import { Match } from '../../match/match.entity';
-import { Team } from '../../team/team.entity';
+import type { Match } from '../../match/match.entity';
+import type { Team } from '../../team/team.entity';
 
 export class CreateTeamMatchDto {
   @IsBoolean()

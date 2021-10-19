@@ -1,8 +1,9 @@
 import { IsNumberString, IsOptional } from 'class-validator';
 
-import { Game } from '../../game/game.entity';
 import { IsBooleanString } from '../../lib/custom.validator';
-import { Player } from '../../player/player.entity';
+
+import type { Game } from '../../game/game.entity';
+import type { Player } from '../../player/player.entity';
 
 export class GetPlayerGamesFilterDto {
   @IsNumberString()

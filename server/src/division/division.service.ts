@@ -2,11 +2,12 @@ import { Injectable, NotFoundException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import * as _ from 'lodash';
 
-import { Division } from './division.entity';
 import { DivisionRepository } from './division.repository';
-import { CreateDivisionDto } from './dto/create-division.dto';
-import { GetDivisionsFilterDto } from './dto/get-divisions-filter.dto';
-import { UpdateDivisionDto } from './dto/update-division.dto';
+
+import type { Division } from './division.entity';
+import type { CreateDivisionDto } from './dto/create-division.dto';
+import type { GetDivisionsFilterDto } from './dto/get-divisions-filter.dto';
+import type { UpdateDivisionDto } from './dto/update-division.dto';
 
 @Injectable()
 export class DivisionService {

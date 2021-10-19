@@ -2,12 +2,13 @@ import { Injectable, NotFoundException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import * as _ from 'lodash';
 
-import { User } from '../auth/user.entity';
-import { Game } from './game.entity';
 import { GameRepository } from './game.repository';
-import { CreateGameDto } from './dto/create-game.dto';
-import { GetGamesFilterDto } from './dto/get-games-filter.dto';
-import { UpdateGameDto } from './dto/update-game.dto';
+
+import type { User } from '../auth/user.entity';
+import type { Game } from './game.entity';
+import type { CreateGameDto } from './dto/create-game.dto';
+import type { GetGamesFilterDto } from './dto/get-games-filter.dto';
+import type { UpdateGameDto } from './dto/update-game.dto';
 
 @Injectable()
 export class GameService {

@@ -1,8 +1,10 @@
 import { Logger } from '@nestjs/common';
 import * as bcrypt from 'bcryptjs';
-import { getRepository, MigrationInterface, QueryRunner } from 'typeorm';
+import { getRepository } from 'typeorm';
 
 import { UserSeed } from '../seed/user.seed';
+
+import type { MigrationInterface, QueryRunner } from 'typeorm';
 
 export class UserSeed1571907084198 implements MigrationInterface {
   private logger = new Logger('UserSeed');

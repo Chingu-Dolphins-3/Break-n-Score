@@ -1,6 +1,6 @@
 import { IsBoolean, IsInt, IsISO8601, IsMilitaryTime, IsOptional } from 'class-validator';
 
-import { Session } from '../../session/session.entity';
+import type { Session } from '../../session/session.entity';
 
 export class UpdateMatchDto {
   @IsMilitaryTime()

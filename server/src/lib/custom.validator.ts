@@ -1,9 +1,6 @@
-import {
-  buildMessage,
-  registerDecorator,
-  ValidationArguments,
-  ValidationOptions,
-} from 'class-validator';
+import { buildMessage, registerDecorator } from 'class-validator';
+
+import type { ValidationArguments, ValidationOptions } from 'class-validator';
 
 export function IsBooleanString(validationOptions?: ValidationOptions) {
   return function (object: Object, propertyName: string) {

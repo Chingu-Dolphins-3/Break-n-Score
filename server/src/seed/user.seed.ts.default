@@ -1,4 +1,4 @@
-import { User } from '../auth/user.entity';
+import type { User } from '../auth/user.entity';
 
 export const UserSeed: Array<Partial<User>> = [
   {

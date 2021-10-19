@@ -16,12 +16,13 @@ import {
 import { AuthGuard } from '@nestjs/passport';
 
 import { GetUser } from '../auth/get-user.decorator';
-import { User } from '../auth/user.entity';
-import { Game } from './game.entity';
 import { GameService } from './game.service';
-import { CreateGameDto } from './dto/create-game.dto';
-import { GetGamesFilterDto } from './dto/get-games-filter.dto';
-import { UpdateGameDto } from './dto/update-game.dto';
+
+import type { User } from '../auth/user.entity';
+import type { CreateGameDto } from './dto/create-game.dto';
+import type { GetGamesFilterDto } from './dto/get-games-filter.dto';
+import type { UpdateGameDto } from './dto/update-game.dto';
+import type { Game } from './game.entity';
 
 @Controller('api/game')
 @UseGuards(AuthGuard())

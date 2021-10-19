@@ -16,12 +16,13 @@ import {
 import { AuthGuard } from '@nestjs/passport';
 
 import { GetUser } from '../auth/get-user.decorator';
-import { User } from '../auth/user.entity';
-import { CreateHostLocationDto } from './dto/create-host-location.dto';
-import { GetHostLocationsFilterDto } from './dto/get-host-locations-filter.dto';
-import { UpdateHostLocationDto } from './dto/update-host-location.dto';
-import { HostLocation } from './host-location.entity';
 import { HostLocationService } from './host-location.service';
+
+import type { User } from '../auth/user.entity';
+import type { CreateHostLocationDto } from './dto/create-host-location.dto';
+import type { GetHostLocationsFilterDto } from './dto/get-host-locations-filter.dto';
+import type { UpdateHostLocationDto } from './dto/update-host-location.dto';
+import type { HostLocation } from './host-location.entity';
 
 @Controller('api/host-location')
 @UseGuards(AuthGuard())

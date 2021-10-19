@@ -1,10 +1,11 @@
 import { InternalServerErrorException, Logger, NotFoundException } from '@nestjs/common';
 import { EntityRepository, Repository } from 'typeorm';
 
-import { User } from '../auth/user.entity';
 import { Game } from './game.entity';
-import { CreateGameDto } from './dto/create-game.dto';
-import { GetGamesFilterDto } from './dto/get-games-filter.dto';
+
+import type { User } from '../auth/user.entity';
+import type { CreateGameDto } from './dto/create-game.dto';
+import type { GetGamesFilterDto } from './dto/get-games-filter.dto';
 
 @EntityRepository(Game)
 export class GameRepository extends Repository<Game> {

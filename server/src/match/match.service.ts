@@ -2,11 +2,12 @@ import { Injectable, NotFoundException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import * as _ from 'lodash';
 
-import { Match } from './match.entity';
 import { MatchRepository } from './match.repository';
-import { CreateMatchDto } from './dto/create-match.dto';
-import { GetMatchesFilterDto } from './dto/get-matches-filter.dto';
-import { UpdateMatchDto } from './dto/update-match.dto';
+
+import type { CreateMatchDto } from './dto/create-match.dto';
+import type { GetMatchesFilterDto } from './dto/get-matches-filter.dto';
+import type { UpdateMatchDto } from './dto/update-match.dto';
+import type { Match } from './match.entity';
 
 @Injectable()
 export class MatchService {

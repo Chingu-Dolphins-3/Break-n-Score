@@ -6,9 +6,10 @@ import { ExtractJwt, Strategy } from 'passport-jwt';
 
 import { AppConfigService } from '../config/app/config.service';
 import { JwtConfigService } from '../config/jwt-config.service';
-import { JwtPayload } from './jwt-payload.interface';
-import { User } from './user.entity';
 import { UserRepository } from './user.repository';
+
+import type { JwtPayload } from './jwt-payload.interface';
+import type { User } from './user.entity';
 
 const configService = new ConfigService();
 const appConfigService = new AppConfigService(configService);

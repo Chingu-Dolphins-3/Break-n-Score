@@ -1,7 +1,8 @@
-import { StrictOmit } from 'ts-essentials';
-
 import { PlayerFormat } from '../player/player-format.enum';
-import { Player } from '../player/player.entity';
+
+import type { StrictOmit } from 'ts-essentials';
+
+import type { Player } from '../player/player.entity';
 
 export type PlayerSeedEntity = StrictOmit<Player, 'skillLevel' | 'user'> & {
   skillLevel: number;

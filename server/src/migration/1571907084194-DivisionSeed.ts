@@ -1,7 +1,9 @@
 import { Logger } from '@nestjs/common';
-import { getRepository, MigrationInterface, QueryRunner } from 'typeorm';
+import { getRepository } from 'typeorm';
 
 import { DivisionSeed } from '../seed/division.seed';
+
+import type { MigrationInterface, QueryRunner } from 'typeorm';
 
 export class DivisionSeed1571907084194 implements MigrationInterface {
   private logger = new Logger('DivisionSeed');

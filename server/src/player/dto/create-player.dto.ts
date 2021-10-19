@@ -1,7 +1,8 @@
 import { IsIn, IsInt, IsNotEmpty } from 'class-validator';
 
-import { SkillLevel } from '../../skill-level/skill-level.entity';
 import { PlayerFormat } from '../player-format.enum';
+
+import type { SkillLevel } from '../../skill-level/skill-level.entity';
 
 export class CreatePlayerDto {
   @IsIn([PlayerFormat.EIGHT, PlayerFormat.NINE])

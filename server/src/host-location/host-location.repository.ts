@@ -7,9 +7,10 @@ import {
 import { EntityRepository, Repository } from 'typeorm';
 
 import { duplicateEntryErrorCode } from '../auth/user.repository';
-import { CreateHostLocationDto } from './dto/create-host-location.dto';
-import { GetHostLocationsFilterDto } from './dto/get-host-locations-filter.dto';
 import { HostLocation } from './host-location.entity';
+
+import type { CreateHostLocationDto } from './dto/create-host-location.dto';
+import type { GetHostLocationsFilterDto } from './dto/get-host-locations-filter.dto';
 
 @EntityRepository(HostLocation)
 export class HostLocationRepository extends Repository<HostLocation> {

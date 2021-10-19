@@ -1,7 +1,9 @@
 import { Logger } from '@nestjs/common';
-import { getRepository, MigrationInterface, QueryRunner } from 'typeorm';
+import { getRepository } from 'typeorm';
 
 import { MatchSeed } from '../seed/match.seed';
+
+import type { MigrationInterface, QueryRunner } from 'typeorm';
 
 export class MatchSeed1571907084201 implements MigrationInterface {
   private logger = new Logger('MatchSeed');

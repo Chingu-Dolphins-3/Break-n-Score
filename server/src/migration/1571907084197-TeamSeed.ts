@@ -1,9 +1,12 @@
 import { Logger } from '@nestjs/common';
-import { getRepository, MigrationInterface, QueryRunner } from 'typeorm';
+import { getRepository } from 'typeorm';
 
-import { Division } from '../division/division.entity';
-import { HostLocation } from '../host-location/host-location.entity';
 import { TeamSeed } from '../seed/team.seed';
+
+import type { MigrationInterface, QueryRunner } from 'typeorm';
+
+import type { Division } from '../division/division.entity';
+import type { HostLocation } from '../host-location/host-location.entity';
 
 export class TeamSeed1571907084197 implements MigrationInterface {
   private logger = new Logger('TeamSeed');

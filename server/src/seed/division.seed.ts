@@ -1,6 +1,7 @@
 import { DayOfWeekName } from '../division/day-of-week.enum';
-import { Division } from '../division/division.entity';
 import { PlayerFormat } from '../player/player-format.enum';
+
+import type { Division } from '../division/division.entity';
 
 export const DivisionSeed: Array<Partial<Division>> = [
   {

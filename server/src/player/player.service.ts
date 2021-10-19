@@ -2,13 +2,14 @@ import { Injectable, NotFoundException, UnprocessableEntityException } from '@ne
 import { InjectRepository } from '@nestjs/typeorm';
 import * as _ from 'lodash';
 
-import { User } from '../auth/user.entity';
 import { SkillLevelRepository } from '../skill-level/skill-level.repository';
-import { CreatePlayerDto } from './dto/create-player.dto';
-import { GetPlayersFilterDto } from './dto/get-players-filter.dto';
-import { UpdatePlayerSkillLevelDto } from './dto/update-player-skill-level.dto';
-import { Player } from './player.entity';
 import { PlayerRepository } from './player.repository';
+
+import type { User } from '../auth/user.entity';
+import type { CreatePlayerDto } from './dto/create-player.dto';
+import type { GetPlayersFilterDto } from './dto/get-players-filter.dto';
+import type { UpdatePlayerSkillLevelDto } from './dto/update-player-skill-level.dto';
+import type { Player } from './player.entity';
 
 @Injectable()
 export class PlayerService {
