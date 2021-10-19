@@ -2,11 +2,12 @@ import { Injectable, NotFoundException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import * as _ from 'lodash';
 
-import { Session } from './session.entity';
 import { SessionRepository } from './session.repository';
-import { CreateSessionDto } from './dto/create-session.dto';
-import { GetSessionsFilterDto } from './dto/get-sessions-filter.dto';
-import { UpdateSessionDto } from './dto/update-session.dto';
+
+import type { CreateSessionDto } from './dto/create-session.dto';
+import type { GetSessionsFilterDto } from './dto/get-sessions-filter.dto';
+import type { UpdateSessionDto } from './dto/update-session.dto';
+import type { Session } from './session.entity';
 
 @Injectable()
 export class SessionService {

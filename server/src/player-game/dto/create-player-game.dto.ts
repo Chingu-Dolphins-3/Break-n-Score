@@ -1,7 +1,7 @@
 import { IsInt, IsNotEmpty } from 'class-validator';
 
-import { Game } from '../../game/game.entity';
-import { Player } from '../../player/player.entity';
+import type { Game } from '../../game/game.entity';
+import type { Player } from '../../player/player.entity';
 
 export class CreatePlayerGameDto {
   @IsInt()

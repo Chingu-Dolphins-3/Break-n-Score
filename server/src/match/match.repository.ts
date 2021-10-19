@@ -2,8 +2,9 @@ import { InternalServerErrorException, Logger, NotFoundException } from '@nestjs
 import { EntityRepository, Repository } from 'typeorm';
 
 import { Match } from './match.entity';
-import { CreateMatchDto } from './dto/create-match.dto';
-import { GetMatchesFilterDto } from './dto/get-matches-filter.dto';
+
+import type { CreateMatchDto } from './dto/create-match.dto';
+import type { GetMatchesFilterDto } from './dto/get-matches-filter.dto';
 
 @EntityRepository(Match)
 export class MatchRepository extends Repository<Match> {

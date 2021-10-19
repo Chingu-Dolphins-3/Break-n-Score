@@ -2,9 +2,10 @@ import { ConflictException, InternalServerErrorException } from '@nestjs/common'
 import * as bcrypt from 'bcryptjs';
 import { EntityRepository, Repository } from 'typeorm';
 
-import { AuthCredentialsDto } from './dto/auth-credentials.dto';
-import { CreateUserDto } from './dto/create-user.dto';
 import { User } from './user.entity';
+
+import type { AuthCredentialsDto } from './dto/auth-credentials.dto';
+import type { CreateUserDto } from './dto/create-user.dto';
 
 export const duplicateEntryErrorCode = '23505';
 

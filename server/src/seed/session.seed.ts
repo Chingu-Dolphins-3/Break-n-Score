@@ -1,5 +1,6 @@
-import { Session } from '../session/session.entity';
 import { SessionName } from '../session/session-name.enum';
+
+import type { Session } from '../session/session.entity';
 
 export const SessionSeed: Array<Partial<Session>> = [
   {

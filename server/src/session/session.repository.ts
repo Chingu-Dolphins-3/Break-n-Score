@@ -2,8 +2,9 @@ import { InternalServerErrorException, Logger, NotFoundException } from '@nestjs
 import { EntityRepository, Repository } from 'typeorm';
 
 import { Session } from './session.entity';
-import { CreateSessionDto } from './dto/create-session.dto';
-import { GetSessionsFilterDto } from './dto/get-sessions-filter.dto';
+
+import type { CreateSessionDto } from './dto/create-session.dto';
+import type { GetSessionsFilterDto } from './dto/get-sessions-filter.dto';
 
 @EntityRepository(Session)
 export class SessionRepository extends Repository<Session> {

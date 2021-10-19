@@ -1,5 +1,6 @@
 import { PlayerFormat } from '../player/player-format.enum';
-import { SkillLevel } from '../skill-level/skill-level.entity';
+
+import type { SkillLevel } from '../skill-level/skill-level.entity';
 
 export const SkillLevelSeed: Array<Partial<SkillLevel>> = [
   {

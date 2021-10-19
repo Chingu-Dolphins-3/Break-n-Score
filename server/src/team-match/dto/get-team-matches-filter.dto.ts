@@ -1,8 +1,9 @@
 import { IsNumberString, IsOptional } from 'class-validator';
 
 import { IsBooleanString } from '../../lib/custom.validator';
-import { Match } from '../../match/match.entity';
-import { Team } from '../../team/team.entity';
+
+import type { Match } from '../../match/match.entity';
+import type { Team } from '../../team/team.entity';
 
 export class GetTeamMatchesFilterDto {
   @IsBooleanString()

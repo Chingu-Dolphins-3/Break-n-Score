@@ -16,12 +16,13 @@ import {
 import { AuthGuard } from '@nestjs/passport';
 
 import { GetUser } from '../auth/get-user.decorator';
-import { User } from '../auth/user.entity';
-import { Match } from './match.entity';
 import { MatchService } from './match.service';
-import { CreateMatchDto } from './dto/create-match.dto';
-import { GetMatchesFilterDto } from './dto/get-matches-filter.dto';
-import { UpdateMatchDto } from './dto/update-match.dto';
+
+import type { User } from '../auth/user.entity';
+import type { CreateMatchDto } from './dto/create-match.dto';
+import type { GetMatchesFilterDto } from './dto/get-matches-filter.dto';
+import type { UpdateMatchDto } from './dto/update-match.dto';
+import type { Match } from './match.entity';
 
 @Controller('api/match')
 @UseGuards(AuthGuard())

@@ -1,7 +1,9 @@
 import { Logger } from '@nestjs/common';
-import { getRepository, MigrationInterface, QueryRunner } from 'typeorm';
+import { getRepository } from 'typeorm';
 
 import { SkillLevelSeed } from '../seed/skill-level.seed';
+
+import type { MigrationInterface, QueryRunner } from 'typeorm';
 
 export class SkillLevelSeed1571907084193 implements MigrationInterface {
   private logger = new Logger('SkillLevelSeed');

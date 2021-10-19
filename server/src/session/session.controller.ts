@@ -16,12 +16,13 @@ import {
 import { AuthGuard } from '@nestjs/passport';
 
 import { GetUser } from '../auth/get-user.decorator';
-import { User } from '../auth/user.entity';
-import { Session } from './session.entity';
 import { SessionService } from './session.service';
-import { CreateSessionDto } from './dto/create-session.dto';
-import { GetSessionsFilterDto } from './dto/get-sessions-filter.dto';
-import { UpdateSessionDto } from './dto/update-session.dto';
+
+import type { User } from '../auth/user.entity';
+import type { CreateSessionDto } from './dto/create-session.dto';
+import type { GetSessionsFilterDto } from './dto/get-sessions-filter.dto';
+import type { UpdateSessionDto } from './dto/update-session.dto';
+import type { Session } from './session.entity';
 
 @Controller('api/session')
 @UseGuards(AuthGuard())

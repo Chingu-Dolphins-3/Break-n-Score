@@ -1,8 +1,9 @@
 import { IsIn, IsInt, IsOptional, IsString } from 'class-validator';
 
-import { Division } from '../../division/division.entity';
-import { HostLocation } from '../../host-location/host-location.entity';
 import { PlayerFormat } from '../../player/player-format.enum';
+
+import type { Division } from '../../division/division.entity';
+import type { HostLocation } from '../../host-location/host-location.entity';
 
 export class UpdateTeamDto {
   @IsInt()

@@ -16,12 +16,13 @@ import {
 import { AuthGuard } from '@nestjs/passport';
 
 import { GetUser } from '../auth/get-user.decorator';
-import { User } from '../auth/user.entity';
-import { CreatePlayerTeamDto } from './dto/create-player-team.dto';
-import { GetPlayerTeamsFilterDto } from './dto/get-player-teams-filter.dto';
-import { UpdatePlayerTeamDto } from './dto/update-player-team.dto';
-import { PlayerTeam } from './player-team.entity';
 import { PlayerTeamService } from './player-team.service';
+
+import type { User } from '../auth/user.entity';
+import type { CreatePlayerTeamDto } from './dto/create-player-team.dto';
+import type { GetPlayerTeamsFilterDto } from './dto/get-player-teams-filter.dto';
+import type { UpdatePlayerTeamDto } from './dto/update-player-team.dto';
+import type { PlayerTeam } from './player-team.entity';
 
 @Controller('api/player-team')
 @UseGuards(AuthGuard())

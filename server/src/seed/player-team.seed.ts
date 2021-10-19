@@ -1,6 +1,6 @@
-import { StrictOmit } from 'ts-essentials';
+import type { StrictOmit } from 'ts-essentials';
 
-import { PlayerTeam } from '../player-team/player-team.entity';
+import type { PlayerTeam } from '../player-team/player-team.entity';
 
 export type PlayerTeamSeedEntity = StrictOmit<PlayerTeam, 'player' | 'team'> & {
   player: number;

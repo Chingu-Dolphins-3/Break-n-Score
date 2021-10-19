@@ -1,8 +1,9 @@
 import { Injectable } from '@nestjs/common';
 import { BaseConnectionOptions } from 'typeorm/connection/BaseConnectionOptions';
-import { LoggerOptions } from 'typeorm/logger/LoggerOptions';
 
 import { AppConfigService } from './app/config.service';
+
+import type { LoggerOptions } from 'typeorm/logger/LoggerOptions';
 
 export interface OrmConfiguration extends BaseConnectionOptions {
   cli: {
@@ -29,17 +30,17 @@ export class OrmConfigService {
 
   private readonly configuration: OrmConfiguration;
 
+  public getConfig(): OrmConfiguration {
+    if (this.configuration) {
+      return this.configuration;
+    }
+
+    return this.setConfig();
+  }
+
   public setConfig(): OrmConfiguration {
-    const {
-      dbDatabase,
-      dbHost,
-      dbPass,
-      dbPort,
-      dbSynchronize,
-      dbType,
-      dbUser,
-      nodeEnv,
-    } = this.appConfigService;
+    const { dbDatabase, dbHost, dbPass, dbPort, dbSynchronize, dbType, dbUser, nodeEnv } =
+      this.appConfigService;
     const folder = nodeEnv !== 'development' ? 'src' : 'dist';
     const fileExt = nodeEnv !== 'development' ? 'ts' : 'js';
 
@@ -63,13 +64,5 @@ export class OrmConfigService {
       type: dbType as OrmConfiguration['type'],
       username: dbUser,
     };
-  }
-
-  public getConfig(): OrmConfiguration {
-    if (this.configuration) {
-      return this.configuration;
-    }
-
-    return this.setConfig();
   }
 }

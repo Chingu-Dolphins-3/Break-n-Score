@@ -1,7 +1,8 @@
-import { StrictOmit } from 'ts-essentials';
-
 import { PlayerFormat } from '../player/player-format.enum';
-import { Team } from '../team/team.entity';
+
+import type { StrictOmit } from 'ts-essentials';
+
+import type { Team } from '../team/team.entity';
 
 export type TeamSeedEntity = StrictOmit<Team, 'division' | 'hostLocation'> & {
   division: number;

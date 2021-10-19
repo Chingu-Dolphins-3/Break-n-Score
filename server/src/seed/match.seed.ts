@@ -1,8 +1,10 @@
 import * as dateFns from 'date-fns';
-import { StrictOmit } from 'ts-essentials';
 
 import { DayOfWeek } from '../division/day-of-week.enum';
-import { Match } from '../match/match.entity';
+
+import type { StrictOmit } from 'ts-essentials';
+
+import type { Match } from '../match/match.entity';
 
 export type MatchSeedEntity = StrictOmit<Match, 'session'> & {
   session: number;

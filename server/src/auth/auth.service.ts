@@ -2,12 +2,14 @@ import { Injectable, Logger, UnauthorizedException } from '@nestjs/common';
 import { JwtService } from '@nestjs/jwt';
 import { InjectRepository } from '@nestjs/typeorm';
 
-import { AuthCredentialsDto } from './dto/auth-credentials.dto';
-import { CreateUserDto } from './dto/create-user.dto';
-import { JwtPayload } from './jwt-payload.interface';
-import { UserNameAndEmail, UserRepository } from './user.repository';
+import { UserRepository } from './user.repository';
 
 import type { Merge } from 'ts-essentials';
+
+import type { AuthCredentialsDto } from './dto/auth-credentials.dto';
+import type { CreateUserDto } from './dto/create-user.dto';
+import type { JwtPayload } from './jwt-payload.interface';
+import type { UserNameAndEmail } from './user.repository';
 
 export type UserInfo = Merge<UserNameAndEmail, { accessToken: string }>;
 

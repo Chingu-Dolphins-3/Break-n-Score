@@ -1,9 +1,12 @@
 import { Logger } from '@nestjs/common';
-import { getRepository, MigrationInterface, QueryRunner } from 'typeorm';
+import { getRepository } from 'typeorm';
 
-import { Game } from '../game/game.entity';
-import { Player } from '../player/player.entity';
 import { PlayerGameSeed } from '../seed/player-game.seed';
+
+import type { MigrationInterface, QueryRunner } from 'typeorm';
+
+import type { Game } from '../game/game.entity';
+import type { Player } from '../player/player.entity';
 
 export class PlayerGameSeed1571907084204 implements MigrationInterface {
   private logger = new Logger('PlayerGameSeed');

@@ -16,12 +16,13 @@ import {
 import { AuthGuard } from '@nestjs/passport';
 
 import { GetUser } from '../auth/get-user.decorator';
-import { User } from '../auth/user.entity';
-import { Division } from './division.entity';
 import { DivisionService } from './division.service';
-import { CreateDivisionDto } from './dto/create-division.dto';
-import { GetDivisionsFilterDto } from './dto/get-divisions-filter.dto';
-import { UpdateDivisionDto } from './dto/update-division.dto';
+
+import type { User } from '../auth/user.entity';
+import type { Division } from './division.entity';
+import type { CreateDivisionDto } from './dto/create-division.dto';
+import type { GetDivisionsFilterDto } from './dto/get-divisions-filter.dto';
+import type { UpdateDivisionDto } from './dto/update-division.dto';
 
 @Controller('api/division')
 @UseGuards(AuthGuard())

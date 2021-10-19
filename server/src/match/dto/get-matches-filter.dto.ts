@@ -1,7 +1,8 @@
 import { IsISO8601, IsNumberString, IsOptional } from 'class-validator';
 
 import { IsBooleanString } from '../../lib/custom.validator';
-import { Session } from '../../session/session.entity';
+
+import type { Session } from '../../session/session.entity';
 
 export class GetMatchesFilterDto {
   @IsISO8601({ strict: true })
