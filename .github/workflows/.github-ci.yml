@@ -26,5 +26,5 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'yarn'
-    - run: cd client && yarn run build --if-present
-    - run: cd server && yarn run build --if-present
+    - run: yarn install
+    - run: yarn run build --if-present
